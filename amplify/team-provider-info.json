@@ -1,0 +1,19 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "coffeephile-20190704145356-authRole",
+            "UnauthRoleArn": "arn:aws:iam::192585640311:role/coffeephile-20190704145356-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::192585640311:role/coffeephile-20190704145356-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "coffeephile-20190704145356-deployment",
+            "UnauthRoleName": "coffeephile-20190704145356-unauthRole",
+            "StackName": "coffeephile-20190704145356",
+            "StackId": "arn:aws:cloudformation:us-east-2:192585640311:stack/coffeephile-20190704145356/764bb6e0-9e95-11e9-8546-0aedd1bf2484"
+        },
+        "categories": {
+            "auth": {
+                "coffeephilepool": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "AppSyncApiName": "coffeephile",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "AuthCognitoUserPoolId": {
+        "Fn::GetAtt": [
+            "authcoffeephilepool",
+            "Outputs.UserPoolId"
+        ]
+    }
+}
