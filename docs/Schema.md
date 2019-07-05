@@ -1,5 +1,7 @@
 # Coffeephile Schema
 
+==============
+
 ## Background
 
 The idea for this API project came from a pure desire to better appreciate craft coffees and their stories. As such, there are two focal points in the schema currently:
@@ -11,13 +13,6 @@ Each origin can have many brews associated with it, and brews may be associated 
 
 ## Types
 
-### Origin
-
-```graphql
-type Origin @model {
-	id: ID!
-	name: String!
-	# countries: [Country] #	maybe an extended type???
-	# tips: [Tip]
-}
-```
+- [Origin](https://github.com/DanielCender/Coffeephile/blob/25bee2de1c83f260a3217fd3cb83948ebf5a37df/amplify/backend/api/coffeephile/schema.graphql#L21) - A country or region of origin for a bean varietal.
+- [Varietal](https://github.com/DanielCender/Coffeephile/blob/25bee2de1c83f260a3217fd3cb83948ebf5a37df/amplify/backend/api/coffeephile/schema.graphql#L2) - A bean type (ex. Arabica)
+- [CharacterTag](https://github.com/DanielCender/Coffeephile/blob/25bee2de1c83f260a3217fd3cb83948ebf5a37df/amplify/backend/api/coffeephile/schema.graphql#L14) - A trait, flavor, or texture associated with a brew or bean.
