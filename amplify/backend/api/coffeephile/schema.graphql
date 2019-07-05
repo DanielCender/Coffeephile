@@ -3,18 +3,33 @@ type Varietal @model {
 	id: ID!
 	name: String!
 	# countries: [Country]
-	# latinName: String!
-	characteristics: [CharacterTag] @connection(name: "VarietalCharacteristics") # ex. Earthy, nutty, citrus...
+	latinName: String!
+	positiveChars: [PositiveTraits] # ex. Earthy, nutty, citrus...
+	neutralChars: [NeutralTraits]
+	negativeChars: [NegativeTraits]
 	derivedFrom: Varietal @connection(name: "DerivedVarietals")
 	subVarietals: [Varietal] @connection(name: "DerivedVarietals") # a self-reference, not sure if this will work not yet
 	origin: Origin @connection(name: "VarietalOrigin")
 }
 
 # Hints of *insert flavor here*, you get the idea
-type CharacterTag @model {
-	id: ID!
-	name: String!
-	varietals: [Varietal] @connection(name: "VarietalCharacteristics")
+enum PositiveTraits {
+	NUTTY
+	FLORAL
+	CITRUS
+}
+
+# Body of the brew, things up to subjective preference
+enum NeutralTraits {
+	FULL_BODY
+	MEDIUM_BODY
+	LIGHT_BODY
+}
+
+# Purely negative traits, like musty or moldy qualities to the roasts/brews
+enum NegativeTraits {
+	MOLDY
+	MUSTY
 }
 
 #	Countries of origin and what can be found there
