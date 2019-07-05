@@ -1,7 +1,21 @@
-type MyType @model {
+# species of coffee plant/bean and its properties
+type Varietal @model {
 	id: ID!
-	title: String!
-	content: String!
-	price: Int
-	rating: Float
+	name: String!
+	# countries: [Country]
+	# latinName: String!
+	characteristics: [CharacterTag] @connection(name: "VarietalCharacteristics") # ex. Earthy, nutty, citrus...
+	derivedFrom: Varietal @connection(name: "DerivedVarietals")
+	subVarietals: [Varietal] @connection(name: "DerivedVarietals") # a self-reference, not sure if this will work not yet
 }
+
+# Hints of *insert flavor here*, you get the idea
+type CharacterTag @model {
+	id: ID!
+	name: String!
+	varietals: [Varietal] @connection(name: "VarietalCharacteristics")
+}
+
+# Roasting methods??.....
+
+# Equipment types????......
