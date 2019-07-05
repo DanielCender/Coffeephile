@@ -7,6 +7,7 @@ type Varietal @model {
 	characteristics: [CharacterTag] @connection(name: "VarietalCharacteristics") # ex. Earthy, nutty, citrus...
 	derivedFrom: Varietal @connection(name: "DerivedVarietals")
 	subVarietals: [Varietal] @connection(name: "DerivedVarietals") # a self-reference, not sure if this will work not yet
+	origin: Origin @connection(name: "VarietalOrigin")
 }
 
 # Hints of *insert flavor here*, you get the idea
@@ -14,6 +15,13 @@ type CharacterTag @model {
 	id: ID!
 	name: String!
 	varietals: [Varietal] @connection(name: "VarietalCharacteristics")
+}
+
+#	Countries of origin and what can be found there
+type Origin @model {
+	id: ID!
+	name: String!
+	varietals: [Varietal] @connection(name: "VarietalOrigin")
 }
 
 # Roasting methods??.....

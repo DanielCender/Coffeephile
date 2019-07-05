@@ -9,6 +9,15 @@ The idea for this API project came from a pure desire to better appreciate craft
 
 Each origin can have many brews associated with it, and brews may be associated or differentiated based on the equipment or bean origin.
 
-```graphql
+## Types
 
+### Origin
+
+```graphql
+type Origin @model {
+	id: ID!
+	name: String!
+	# countries: [Country] #	maybe an extended type???
+	# tips: [Tip]
+}
 ```
